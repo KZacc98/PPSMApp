@@ -10,15 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements ExampleDialog.ExampleDialogListener {
 
     private RecyclerView mRecyclerView;
     private ExampleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ImageButton buttonAdd;
+
 
 
     @Nullable
@@ -27,20 +30,27 @@ public class HomeFragment extends Fragment {
 
         //Karty przedmiotów hopefully pobierane z serwera...
         ArrayList<ExampleItem> exampleList= new ArrayList<>();
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Bazy Danych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Inżynieria Oprogramowania"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Języki i systemy sztucznej inteligencji"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Lektorat języka Angielskiego"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Podstawy Programowania Systemów Mobilnych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Programowanie Systemów mobilnych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Programowanie UI"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Techniki Kompilacji"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Technologie obiektowe i komponentowe"));
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         buildRecyclerView(view,exampleList);
 
+        buttonAdd= view.findViewById(R.id.imageButton);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
 
         //onclick and stuff
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
@@ -58,6 +68,13 @@ public class HomeFragment extends Fragment {
 
     }
 
+    public void openDialog(){
+        ExampleDialog exampleDialog=new ExampleDialog();
+        exampleDialog.show(getFragmentManager(),"example dialog");
+
+
+    }
+
     public void buildRecyclerView(View view,ArrayList<ExampleItem> list){
         //BUILD RECYCLERVIEW
         mRecyclerView=view.findViewById(R.id.recyclerView);
@@ -68,6 +85,11 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+    }
+
+    @Override
+    public void ApplyText(String className, String profName, int ects) {
+        text
     }
 }
 
