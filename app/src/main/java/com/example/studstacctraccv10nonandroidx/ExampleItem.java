@@ -15,4 +15,8 @@ public class ExampleItem {
     public String getText() {
         return mText;
     }
+
+    public void changeText(String text){
+        mText=text;
+    }
 }
