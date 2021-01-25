@@ -26,15 +26,15 @@ public class ProfileFragment extends Fragment{
 
         //Karty przedmiotów hopefully pobierane z serwera...
         ArrayList<ExampleItem> exampleList= new ArrayList<>();
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Nazwa Przedmiotu"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Nazwa Przedmiotu2"));
-        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Nazwa Przedmiotu3"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Bazy Danych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Inżynieria Oprogramowania"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Języki i systemy sztucznej inteligencji"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Lektorat języka Angielskiego"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Podstawy Programowania Systemów Mobilnych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Programowanie Systemów mobilnych"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card1,"Programowanie UI"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card2,"Techniki Kompilacji"));
+        exampleList.add(new ExampleItem(R.drawable.ic_card3,"Technologie obiektowe i komponentowe"));
 
 
         View view = inflater.inflate(R.layout.fragment_profile,container,false);

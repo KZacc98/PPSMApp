@@ -11,6 +11,8 @@ import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import java.util.Objects;
+
 import static java.lang.Integer.parseInt;
 
 public class ExampleDialog extends AppCompatDialogFragment {
@@ -60,7 +62,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
 
 
     public interface ExampleDialogListener{
-        void ApplyText(String className, String profName, int ects);
+        void applyText(String className, String profName, int ects);
 
     }
 

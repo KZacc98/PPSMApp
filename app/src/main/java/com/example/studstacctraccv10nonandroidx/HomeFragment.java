@@ -22,14 +22,14 @@ public class HomeFragment extends Fragment implements ExampleDialog.ExampleDialo
     private RecyclerView.LayoutManager mLayoutManager;
     private ImageButton buttonAdd;
 
-
+    ArrayList<ExampleItem> exampleList= new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Karty przedmiotów hopefully pobierane z serwera...
-        ArrayList<ExampleItem> exampleList= new ArrayList<>();
+
         exampleList.add(new ExampleItem(R.drawable.ic_card1,"Bazy Danych"));
         exampleList.add(new ExampleItem(R.drawable.ic_card2,"Inżynieria Oprogramowania"));
         exampleList.add(new ExampleItem(R.drawable.ic_card3,"Języki i systemy sztucznej inteligencji"));
@@ -88,8 +88,8 @@ public class HomeFragment extends Fragment implements ExampleDialog.ExampleDialo
     }
 
     @Override
-    public void ApplyText(String className, String profName, int ects) {
-        text
+    public void applyText(String className, String profName, int ects) {
+        //exampleList.add(new ExampleItem(R.drawable.ic_card1,className));
     }
 }
 
